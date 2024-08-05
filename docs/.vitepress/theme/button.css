@@ -1,0 +1,109 @@
+.btn {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-shadow: 0px 1px 1px #000;
+  cursor: pointer;
+  width: 180px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 边框1 */
+.btn-border1 {
+  border: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  transition: transform 0.2s ease;
+  padding: 1px;
+}
+.btn-border1::before {
+  content: "";
+  position: absolute;
+  left: 5rem;
+  right: 5rem;
+  top: 1rem;
+  bottom: 1rem;
+  pointer-events: none;
+  background: linear-gradient(132deg, #a87ffb 17.33%, #4584ff 100.47%);
+  transform: translateZ(0) rotate(0) skew(0) skewY(0) scaleX(1) scaleY(1);
+  transition: opacity 0.5s ease;
+  filter: blur(36px);
+  z-index: -10;
+  opacity: 0;
+}
+.btn-border1::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    rgb(40, 46, 64) 0%,
+    rgb(40, 46, 64) 24%,
+    rgb(40, 46, 64) 39%,
+    #fff 47%,
+    #fff 54%,
+    #a87ffb 56%,
+    #4584ff 100%
+  );
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  transition: background-position 0.8s ease;
+  transform: translateZ(0) rotate(0) skew(0) skewY(0) scaleX(1) scaleY(1);
+  border-radius: 0.5rem;
+  pointer-events: none;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: -10;
+}
+.btn-border1 .animate-box-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  background: rgb(40, 50, 70);
+  z-index: -1;
+}
+.btn-border1:hover {
+  color: #fff;
+}
+.btn-border1:hover::before {
+  opacity: 0.4;
+}
+.btn-border1:hover::after {
+  background-position: 100% 50%;
+  animation: 0.7s border1 1s cubic-bezier(0.8, 0, 0.2, 1) infinite alternate;
+  animation-fill-mode: backwards;
+}
+@keyframes border1 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+/* 背景1 */
+.btn-bg1 {
+  border: none;
+  background-size: 300% 100%;
+  background-image: linear-gradient(-60deg, #4584ff, #6d9fff, #4584ff);
+  background-position: 100% 0px;
+  box-shadow: 0 0 8px #4584ff;
+  transition: all 0.3s ease 0s;
+}
+.btn-bg1:hover {
+  background-position: 0% 0px;
+  color: #fff;
+}

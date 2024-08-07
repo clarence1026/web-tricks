@@ -1,5 +1,5 @@
 # Web Tricks
-预览：
+[访问官网](https://clarence1026.github.io/web-tricks/)
 
 ## 项目简介
 
